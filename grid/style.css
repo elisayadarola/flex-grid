@@ -1,0 +1,218 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap");
+* {
+  font-family: Arial;
+  margin: 0;
+  padding: 0;
+}
+.gridContainer {
+  display: grid;
+  border: solid 1px white;
+}
+.navbar {
+  display: grid;
+  grid-template-columns: 50% 12.5% 12.5% 12.5% 12.5%;
+  grid-template-rows: 100%;
+
+  align-items: center;
+  height: auto;
+  color: black;
+}
+.nav {
+  text-align: center;
+  font-size: 25px;
+}
+/* si la img no aparece bien, ver si está definido el
+background size,height y colocar 'center' 'center' 
+para posicionar bien. */
+.main {
+  display: grid;
+  grid-template-rows: 50% 50%;
+  background: url("../assets/pexels-vishnu-r-nair-1105666.jpg") no-repeat center
+    center;
+  background-size: 100%;
+  background-position: auto;
+  height: 100vh;
+  text-align: center;
+  align-items: center;
+  color: white;
+}
+/*bottom = permite desplazar 1 elemento
+respecto a la posición original, tomando 
+como ref el bonrde inferior. solo afecta
+a elementos relative, absolute o fixed*/
+h1 {
+  font-size: 50px;
+  font-weight: bold;
+  bottom: -150px;
+  position: relative;
+}
+
+h3 {
+  margin-bottom: 200px;
+  font-weight: lighter;
+  font-size: 25px;
+  position: relative;
+}
+
+/* para usar grid areas, no definir template-columns
+o template-rows. */
+.mainText {
+  display: grid;
+  grid-template-areas:
+    "header header header" "menu main aside"
+    "footer bottom text" "sub sub1 sub2";
+  grid-column-gap: 20px;
+  margin: auto 60px 40px 60px;
+}
+/*colocar los otros atributos del main div a parte */
+
+.mainText div {
+  text-align: center;
+  color: black;
+  padding: 10px;
+  justify-content: center;
+}
+
+.item1 {
+  font-weight: bold;
+  font-size: 35px;
+  grid-area: header;
+  text-decoration: underline;
+  text-decoration-color: #1ab26b;
+  text-decoration-thickness: 4px;
+  text-underline-position: under;
+}
+.item2 {
+  grid-area: main;
+}
+.item3 {
+  grid-area: menu;
+}
+.item4 {
+  grid-area: aside;
+}
+.item5 {
+  font-weight: bold;
+  grid-area: footer;
+  font-size: 25px;
+}
+.item6 {
+  font-weight: bold;
+  grid-area: bottom;
+  font-size: 25px;
+}
+
+.item7 {
+  font-weight: bold;
+  grid-area: text;
+  font-size: 25px;
+}
+.item8 {
+  grid-area: sub;
+  font-size: 20px;
+  font-weight: lighter;
+}
+.item9 {
+  grid-area: sub1;
+  font-size: 20px;
+  font-weight: lighter;
+}
+.item10 {
+  grid-area: sub2;
+  font-size: 20px;
+  font-weight: lighter;
+}
+/* para que el logo se vea bien, ponerlo
+size auto, poner background mismo color y
+poner background position en el centro.*/
+.footer {
+  background: url("../assets/logo-2.PNG") no-repeat;
+  background-size: auto;
+  background-position: center;
+  background-color: #1ab26b;
+  justify-content: center;
+  margin: 30px 35px 30px 35px;
+  align-items: center;
+  height: 750px;
+}
+
+.footer1 {
+  margin-left: 30px;
+  margin-top: 30px;
+}
+
+/*para que el underline quede bien, hay q aplicar
+text-underline-position: under. sino se solapa*/
+.kanye {
+  text-decoration: underline;
+  text-decoration-color: #1ab26b;
+  text-underline-position: under;
+  text-decoration-thickness: 3px;
+  text-decoration-color: white;
+  color: white;
+  text-align: left;
+  margin-top: 30px;
+  margin-left: 30px;
+}
+
+.text2 {
+  color: white;
+  text-align: left;
+  margin-left: 30px;
+  text-align: left;
+  display: space-between;
+  position: cover;
+  margin-top: 30px;
+}
+.search {
+  line-height: 50px;
+  font-size: 20px;
+  margin-top: 10px;
+}
+.browse {
+  line-height: 50px;
+  font-size: 20px;
+  margin-top: 20px;
+}
+
+.discover {
+  line-height: 50px;
+  font-size: 20px;
+  margin-top: 20px;
+}
+
+.listen {
+  font-size: 15px;
+  line-height: 20px;
+  margin-top: 10px;
+}
+.charts {
+  font-size: 15px;
+  line-height: 20px;
+  margin-top: 10px;
+}
+.enjoy {
+  font-size: 15px;
+  line-height: 20px;
+  margin-top: 10px;
+}
+.kanye2 {
+  float: right;
+  margin-top: 30px;
+  margin-right: 70px;
+  margin-bottom: 30px;
+}
+/*colocar img en misma clase comun y aplicar
+float right y despues ajustar margenes y posiciones*/
+/* el punto punto punto, o punto titulo, sirve para, en las trs seccions de ese
+elemento, poner 'espacio'titulo'espacio.
+Para usar la propieda grid-temp-area, tenmos que definir nombre de esas areas
+como observado abajo. */
+/* se crean varias clases para poder poner
+diversas propriedades a elementos en un mismo elemento padre, 
+dspues de definir las propiedads comunes.  */
+/* para lograr q se centren los simbolos, añadir margin. no es 
+necesario item align ni nada. */
+/* el text underline offset me permitió separar el underline
+del texto, porqu quedaba 'dentado' a causa de la 'Y' */
+/* aqui me fallaba la clase de header, que estaba mal */
